@@ -1,0 +1,199 @@
+
+ScreenManager:
+
+    MDScreen:
+        md_bg_color:239/255,243/255,246/255,1
+        name:"SingIn"
+        MDBoxLayout:
+            orientation:'vertical'
+            padding:dp(20)
+            spacing:dp(15)
+            MDBoxLayout:
+                orientation:'vertical'
+                size_hint_y:.6
+                MDLabel:
+                    text:'Welcome'
+
+                MDLabel:
+                    text:"Sign In"
+                    font_style:'H4'
+
+            MDBoxLayout:
+                orientation:'vertical'
+                size_hint_y:1.5
+                MDLabel:
+                    text:"Email"
+                NCard:
+                    MDBoxLayout:
+                        padding:[dp(15),sp(5),dp(15),sp(5)]
+                        md_bg_color:239/255,243/255,246/255,1
+                        radius:[20]
+                        MDTextField:
+                MDLabel:
+                    text:"Password"
+                NCard:
+                    MDBoxLayout:
+                        padding:[dp(15),sp(5),dp(15),sp(5)]
+                        md_bg_color:239/255,243/255,246/255,1
+                        radius:[20]
+                        MDTextField:
+							password:True
+            MDBoxLayout:
+                orientation:'vertical'
+                spacing:dp(10)
+                size_hint_y:1.1
+                MDLabel:
+                    text:'Forget your password ?'
+                    halign:"center"
+                RectangularRippleButton:
+                    md_bg_color:app.theme_cls.primary_color
+                    padding:"10dp"
+                    radius:"20dp"
+                    MDLabel:
+                        text:'Sign In'
+                        halign:"center"
+                        theme_text_color:"Custom"
+                        text_color:1,1,1,1
+                MDLabel:
+                    text:'OR'
+                    halign:"center"
+                MDBoxLayout:
+                    size_hint_x:None
+                    width:"180sp"
+                    pos_hint:{'center_x':.5}
+                    spacing:dp(20)
+                    RectangularRippleImage:
+                        source:"icons/twitter.png"
+                    RectangularRippleImage:
+                        source:"icons/facebook.png"
+                    RectangularRippleImage:
+                        source:"icons/instagram.png"
+
+
+                MDBoxLayout:
+                    pos_hint:{'center_x':.5}
+                    adaptive_width:True
+                    spacing:dp(6)
+                    MDLabel:
+                        text:"Don't have account ?"
+                        text_size:None,None
+                        halign:"center"
+                        adaptive_size:True
+                    MDTextButton:
+                        text:"Sign Up"
+                        theme_text_color:'Custom'
+                        text_color:app.theme_cls.primary_color
+                        on_release:
+                            app.root.transition.direction ="left"
+                            app.root.current="SingUp"
+
+    MDScreen:
+        md_bg_color:239/255,243/255,246/255,1
+        name:"SingUp"
+        MDBoxLayout:
+            orientation:'vertical'
+            padding:dp(15)
+            spacing:dp(10)
+            MDBoxLayout:
+                orientation:'vertical'
+                size_hint_y:.3
+                MDLabel:
+                    text:'Welcome'
+
+                MDLabel:
+                    text:"Sign Up"
+                    font_style:'H4'
+
+            MDBoxLayout:
+                orientation:'vertical'
+                size_hint_y:1.6
+                MDLabel:
+                    text:"Email"
+                NCard:
+                    MDBoxLayout:
+                        padding:[dp(15),sp(5),dp(15),sp(5)]
+                        md_bg_color:239/255,243/255,246/255,1
+                        radius:[20]
+                        MDTextField:
+                MDLabel:
+                    text:"User Name"
+                NCard:
+                    MDBoxLayout:
+                        padding:[dp(15),sp(5),dp(15),sp(5)]
+                        md_bg_color:239/255,243/255,246/255,1
+                        radius:[20]
+                        MDTextField:
+                MDLabel:
+                    text:"Password"
+                NCard:
+                    MDBoxLayout:
+                        padding:[dp(15),sp(5),dp(15),sp(5)]
+                        md_bg_color:239/255,243/255,246/255,1
+                        radius:[20]
+                        MDTextField:
+							password:True
+            MDBoxLayout:
+                orientation:'vertical'
+                spacing:dp(10)
+                size_hint_y:.8
+                MDBoxLayout:
+                    size_hint_y:None
+                    height:dp(10)
+                RectangularRippleButton:
+                    md_bg_color:app.theme_cls.primary_color
+                    padding:"10dp"
+                    radius:"20dp"
+                    MDLabel:
+                        text:'Sign Up'
+                        halign:"center"
+                        theme_text_color:"Custom"
+                        text_color:1,1,1,1
+                MDLabel:
+                    text:'OR'
+                    halign:"center"
+                MDBoxLayout:
+                    size_hint_x:None
+                    width:"180sp"
+                    pos_hint:{'center_x':.5}
+                    spacing:dp(20)
+                    RectangularRippleImage
+                        source:"icons/twitter.png"
+                    RectangularRippleImage
+                        source:"icons/facebook.png"
+                    RectangularRippleImage:
+                        source:"icons/instagram.png"
+
+
+                MDBoxLayout:
+                    pos_hint:{'center_x':.5}
+                    adaptive_width:True
+                    spacing:dp(6)
+                    MDLabel:
+                        text:"Already have account ?"
+                        text_size:None,None
+                        halign:"center"
+                        adaptive_size:True
+                    MDTextButton:
+                        text:"Sign In"
+                        theme_text_color:'Custom'
+                        text_color:app.theme_cls.primary_color
+                        on_release:
+                            app.root.transition.direction ="right"
+                            app.root.current="SingIn"
+<RectangularRippleButton>:
+<RectangularRippleImage>:
+<NCard@MDBoxLayout>:
+    canvas.before:
+        Color:
+            rgba:(0,0,0,.1)
+        RoundedRectangle:
+            size:self.size
+            pos:self.pos[0]+6,self.pos[1]-4
+            radius:[20]
+        Color:
+            rgba:1, 1, 1, 0.8
+        RoundedRectangle:
+            size:self.size
+            pos:self.pos[0]-6,self.pos[1]+4
+            radius:[20]
+
